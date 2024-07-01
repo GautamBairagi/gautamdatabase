@@ -25,5 +25,5 @@ app.delete('/staff/:id', staffController.deleteStaff)
 
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server.js running on port ${port}`);
 });
