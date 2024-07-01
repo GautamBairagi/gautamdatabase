@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const userController = require('./controllers/userController');
+
+ const staffController =require ('./controllers/staffController');
 
 const app = express();
 const port = 3000;
@@ -14,9 +15,14 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to Database'));
 
-app.get('/users', userController.getUsers);
-app.post('/users', userController.createUser);
-app.delete('/users/:id', userController.deleteUser);
+
+
+app.get('/staff', staffController.getStaff);
+app.post('/staff',staffController.createSatff);
+app.delete('/staff/:id', staffController.deleteStaff)
+
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
